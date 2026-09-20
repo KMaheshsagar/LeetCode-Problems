@@ -1,11 +1,12 @@
 class Solution:
     def triangleType(self, nums: List[int]) -> str:
-            if nums[0]+nums[1]>nums[2] and nums[0]+nums[2]>nums[1] and nums[1]+nums[2]>nums[0]:
-                if nums[0]==nums[1]and nums[1]==nums[2] and nums[0]==nums[2]:
-                    return "equilateral"
-                elif nums[0]!=nums[1]and nums[1]!=nums[2] and nums[0]!=nums[2]:
-                    return "scalene"
-                else:
-                    return "isosceles"
+        a,b,c=nums
+        if a+b<=c or b+c<=a or c+a<=b:
             return "none"
-            
+        if a==b==c:
+            return "equilateral"
+        elif a==b or b==c or c==a:
+            return "isosceles"
+        elif a+b>c or b+c>a:
+            return"scalene"
+        
