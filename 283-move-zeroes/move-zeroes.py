@@ -3,15 +3,8 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        if 0 not in nums:
-            return nums
-        j=-1
-        for i in range(len(nums)):
-            if nums[i]==0:
-                j=i
-                break
-        for i in range(j+1,len(nums)):
-            if nums[i]!=nums[j]:
-                nums[i],nums[j]=nums[j],nums[i]
-                j+=1
-        return nums
+        i=0
+        for j in range(len(nums)):
+            if nums[j]!=0:
+               nums[i],nums[j]=nums[j],nums[i]
+               i+=1
